@@ -87,13 +87,13 @@ public interface UsersRepository extends JpaRepository<Users, Long> {
 //    List<Users> findByGenderAndLikeColor(Gender gender, String color);
 
     // quiz 6
-    List<Users> errorDataList();
+//    List<Users> errorDataList();
 
     // quiz 7
     List<Users> findByGenderAndEmailContainsOrderByCreatedAtDesc(Gender gender, String email);
 
     // quiz 8
-    List<Users> findByLikeColorOrderByFavoriteColorAscNameDesc(String color);
+//    List<Users> findByLikeColorOrderByFavoriteColorAscNameDesc(String color);
 
     // quiz 10
     Page<Users> findByGender(Gender gender, Pageable pageable);

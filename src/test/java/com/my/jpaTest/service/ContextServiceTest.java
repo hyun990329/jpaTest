@@ -43,5 +43,6 @@ class ContextServiceTest {
         Member a = em.find(Member.class, "yan");
         Member b = em.find(Member.class, "yan");
         System.out.println(a.equals(b));
+
     }
 }
