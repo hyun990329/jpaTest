@@ -26,4 +26,33 @@ public class ContextService {
         Member won = em.find(Member.class, "yan");
         return won;
     }
+
+    public void transactionTest() {
+        Member ahn = Member.builder()
+                .memberId("jin")
+                .name("안유진")
+                .build();
+
+        Member karina = Member.builder()
+                .memberId("karina")
+                .name("카리나")
+                .build();
+
+        em.persist(ahn);
+        em.persist(karina);
+        em.flush();
+    }
+
+    public void dirtyCheckingTest() {
+        // 조회
+        Member k = em.find(Member.class, "karina");
+        // 수정 (영속성 영역에 가져온 카리나 정보를 수정)
+        // Setter 로 수정
+        k.setName("까리나");
+    }
+
+    public void deleteMember() {
+        Member jin = em.find(Member.class, "jin");
+        em.remove(jin);
+    }
 }
