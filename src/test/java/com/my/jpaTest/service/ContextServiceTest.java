@@ -43,6 +43,24 @@ class ContextServiceTest {
         Member a = em.find(Member.class, "yan");
         Member b = em.find(Member.class, "yan");
         System.out.println(a.equals(b));
+    }
 
+    @Test
+    @DisplayName("Transaction 쓰기 지연 테스트")
+    void transactionTest() {
+        contextService.transactionTest();
+    }
+
+    @Test
+    @DisplayName("Dirty Checking Test")
+    // Dirty Checking : 변경 감지
+    void dirtyChecking() {
+        contextService.dirtyCheckingTest();
+    }
+
+    @Test
+    @DisplayName("삭제 테스트")
+    void deleteMember() {
+        contextService.deleteMember();
     }
 }
