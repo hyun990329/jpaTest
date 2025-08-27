@@ -24,5 +24,7 @@ public class Team {
     // 팀에 소속 된 멤버의 리스트를 저장
     // 연관 관계 설정 : Member 클래스의 Team 정보
     @OneToMany(mappedBy = "team", fetch = FetchType.EAGER)
+
+    @Builder.Default
     private List<Member> memberList = new ArrayList<>();
 }
