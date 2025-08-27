@@ -1,6 +1,7 @@
 package com.my.jpaTest.service;
 
 import com.my.jpaTest.entity.Member;
+import com.my.jpaTest.entity.Parent;
 import com.my.jpaTest.entity.Team;
 import jakarta.persistence.EntityManager;
 import org.junit.jupiter.api.DisplayName;
@@ -51,6 +52,18 @@ class RelationTestServiceTest {
         for (Member m : members) {
             System.out.println(m.getName());
         }
+    }
+
+    @Test
+    @DisplayName("영속성 전이 테스트")
+    void persistTest() {
+        relationTestService.saveChildren();
+    }
+
+    @Test
+    @DisplayName("부모 삭제 테스트")
+    void deleteParent() {
+        relationTestService.deleteParent();
     }
 
     // 장원영 (key : jang) 의 팀 이름을 가져오기
